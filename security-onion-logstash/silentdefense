@@ -1,0 +1,28 @@
+{
+  "description" : "silentdefense",
+  "processors" : [
+      {
+        "dissect": {
+                "if": "ctx.sd.logname == 'NetworkLogs'",
+                "field": "real_message",
+                "pattern" : "rt=%{sd.aler_rt} msg=%{sd.alert_message} cat=%{sd.alert_category} deviceExternalId=%{sd.device_extId} smac=%{source.mac} dmac=%{destination.mac} src=%{source.ip} dst=%{destination.ip} dpt=%{destination.port} %{source.hostname} %{destination.hostname} %{sd.filePath} %{sd.fileType} %{sd.fsize} %{sd.user_message}",
+                "on_failure" : [ {"set" : {"field" : "error.message","value" : "{{ _ingest.on_failure_message }}"}}]
+        }
+     },
+     {
+        "dissect": {
+                "if": "ctx.sd.logname == 'AlertLogs'",
+                "field": "real_message",
+                "pattern" : "cat=%{sd.alert_category} externalId=%{sd.externalID %{sd.caseId} %{caseName} rt=%{sd.aler_rt} smac=%{source.mac} dmac=%{destination.mac} src=%{source.ip} dst=%{destination.ip} spt=%{source.port} dpt=%{destination.port} %{source.hostname} %{destination.hostname} %{sd.user_message}",
+                "on_failure" : [ {"set" : {"field" : "error.message","value" : "{{ _ingest.on_failure_message }}"}}]
+        }
+     },
+     { "set":         { "field": "_index",        "value": "so-silentdefense", "override": true           } },
+     { "set":         { "if": "ctx.network?.transport_id == '0'", "field": "network.transport",        "value": "icmp", "override": true           } },
+     {"community_id": { "if": "ctx.network?.transport != null", "field":["source.ip","source.port","destination.ip","destination.port","network.transport"],"target_field":"network.community_id"}},
+     { "set":         { "field": "module",        "value": "silentdefense", "override": true           } },
+     { "set":         { "field": "dataset",        "value": "ot-ids", "override": true           } },
+     { "remove":      { "field": ["real_message", "ip_sub_msg", "firewall.sub_message"],     "ignore_failure": true  } }
+  ]
+}
+

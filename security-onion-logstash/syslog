@@ -18,7 +18,7 @@
                         "field": "message",
                         "patterns": [
                         		"<111>1 %{TIMESTAMP_ISO8601:sd.timestamp} %{SYSLOGHOST:sd.hostname} %{WORD:sd.logname} - - - CEF:0\\|%{DATA:sd.vendor}\\|%{DATA:sd.product}\\|%{DATA:sd.product_version}\\|%{DATA:sd.alert_name}\\|%{DATA:sd.alert_title}\\|%{DATA:sd.alert_number}\\|%{GREEDYDATA:real_message}",
-                                        "^<%{INT:syslog.priority}>%{DATA:syslog.timestamp} %{WORD:source.application}: %{GREEDYDATA:real_message}$",
+                                        "^<%{INT:syslog.priority}>%{DATA:syslog.timestamp} %{WORD:source.application}(\\[%{DATA:pid}\\])?: %{GREEDYDATA:real_message}$",
                                         "^%{SYSLOGTIMESTAMP:syslog.timestamp} %{SYSLOGHOST:syslog.host} %{SYSLOGPROG:syslog.program}: CEF:0\\|%{DATA:vendor}\\|%{DATA:product}\\|%{GREEDYDATA:message2}$"
                                     ],
                         "ignore_failure": true

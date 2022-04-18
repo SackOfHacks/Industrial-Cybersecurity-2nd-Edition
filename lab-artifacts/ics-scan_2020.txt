@@ -1,0 +1,18 @@
+# Nmap 7.80 scan initiated Sat Aug 29 12:45:59 2020 as: nmap -sn -T3 --dns-servers 172.25.100.100 -oG ics-scan_2020.txt 172.25.100.0/24
+Host: 172.25.100.11 ()	Status: Up
+Host: 172.25.100.12 ()	Status: Up
+Host: 172.25.100.20 ()	Status: Up
+Host: 172.25.100.21 ()	Status: Up
+Host: 172.25.100.23 ()	Status: Up
+Host: 172.25.100.24 ()	Status: Up
+Host: 172.25.100.100 (OT-DC1.OT-Domain.local)	Status: Up
+Host: 172.25.100.105 (FT-DIR1.ot-domain.local)	Status: Up
+Host: 172.25.100.110 (FT-DIR2.ot-domain.local)	Status: Up
+Host: 172.25.100.201 (Workstation1.ot-domain.local)	Status: Up
+Host: 172.25.100.202 (Workstation2.ot-domain.local)	Status: Up
+Host: 172.25.100.203 (Workstation3.ot-domain.local)	Status: Up
+Host: 172.25.100.210 (Workstation10.ot-domain.local)	Status: Up
+Host: 172.25.100.212 (Workstation12.OT-Domain.local)	Status: Up
+Host: 172.25.100.220 ()	Status: Up
+Host: 172.25.100.222 ()	Status: Up
+# Nmap done at Sat Aug 29 12:46:01 2020 -- 256 IP addresses (16 hosts up) scanned in 1.32 seconds

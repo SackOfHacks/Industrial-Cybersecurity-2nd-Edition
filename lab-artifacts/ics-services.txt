@@ -1,0 +1,469 @@
+# Nmap 7.80 scan initiated Sat Aug 29 14:27:11 2020 as: nmap -iL ics_ips.txt -sV -T5 -oN ics-services.txt -p- --dns-servers 172.25.100.100
+Nmap scan report for 172.25.100.11
+Host is up (0.00051s latency).
+Not shown: 65533 closed ports
+PORT      STATE SERVICE       VERSION
+80/tcp    open  http          GoAhead WebServer
+44818/tcp open  EtherNet-IP-2
+MAC Address: 00:00:BC:5A:D0:56 (Rockwell Automation)
+
+Nmap scan report for 172.25.100.12
+Host is up (0.00040s latency).
+Not shown: 65533 closed ports
+PORT      STATE SERVICE       VERSION
+80/tcp    open  http          GoAhead WebServer
+44818/tcp open  EtherNet-IP-2
+MAC Address: 00:00:BC:5B:BF:F1 (Rockwell Automation)
+
+Nmap scan report for 172.25.100.20
+Host is up (0.00055s latency).
+Not shown: 65534 closed ports
+PORT    STATE SERVICE  VERSION
+102/tcp open  iso-tsap Siemens S7 PLC
+MAC Address: 00:1C:06:00:BC:37 (Siemens Numerical Control, Nanjing)
+Service Info: Device: specialized
+
+Nmap scan report for 172.25.100.21
+Host is up (0.00053s latency).
+Not shown: 65534 closed ports
+PORT    STATE SERVICE VERSION
+502/tcp open  mbap?
+MAC Address: 00:20:4A:64:1D:3F (Pronet Gmbh)
+
+Nmap scan report for 172.25.100.23
+Host is up (0.00050s latency).
+Not shown: 65534 closed ports
+PORT      STATE SERVICE       VERSION
+44818/tcp open  EtherNet-IP-2
+MAC Address: 00:03:12:0B:02:AC (TRsystems GmbH)
+
+Nmap scan report for 172.25.100.24
+Host is up (0.00061s latency).
+Not shown: 65534 closed ports
+PORT     STATE SERVICE    VERSION
+4840/tcp open  opcua-tcp?
+MAC Address: 00:E0:4B:19:03:95 (Jump Industrielle Computertechnik Gmbh)
+
+Nmap scan report for OT-DC1.OT-Domain.local (172.25.100.100)
+Host is up (0.00023s latency).
+Not shown: 65509 closed ports
+PORT      STATE SERVICE      VERSION
+53/tcp    open  domain?
+88/tcp    open  kerberos-sec Microsoft Windows Kerberos (server time: 2020-08-29 20:29:17Z)
+135/tcp   open  msrpc        Microsoft Windows RPC
+139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+389/tcp   open  ldap         Microsoft Windows Active Directory LDAP (Domain: OT-Domain.local, Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds Microsoft Windows Server 2008 R2 - 2012 microsoft-ds (workgroup: OT-DOMAIN)
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap         Microsoft Windows Active Directory LDAP (Domain: OT-Domain.local, Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5985/tcp  open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+9389/tcp  open  mc-nmf       .NET Message Framing
+47001/tcp open  http         Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+49664/tcp open  msrpc        Microsoft Windows RPC
+49665/tcp open  msrpc        Microsoft Windows RPC
+49666/tcp open  msrpc        Microsoft Windows RPC
+49667/tcp open  msrpc        Microsoft Windows RPC
+49669/tcp open  msrpc        Microsoft Windows RPC
+49670/tcp open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
+49671/tcp open  msrpc        Microsoft Windows RPC
+49674/tcp open  msrpc        Microsoft Windows RPC
+49679/tcp open  msrpc        Microsoft Windows RPC
+49690/tcp open  msrpc        Microsoft Windows RPC
+49701/tcp open  msrpc        Microsoft Windows RPC
+49741/tcp open  msrpc        Microsoft Windows RPC
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port53-TCP:V=7.80%I=7%D=8/29%Time=5F4ABAA2%P=x86_64-pc-linux-gnu%r(DNSV
+SF:ersionBindReqTCP,20,"\0\x1e\0\x06\x81\x04\0\x01\0\0\0\0\0\0\x07version\
+SF:x04bind\0\0\x10\0\x03");
+MAC Address: 00:02:BA:D9:A7:41 (Cisco Systems)
+Service Info: Host: OT-DC1; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for FT-DIR1.ot-domain.local (172.25.100.105)
+Host is up (0.00029s latency).
+Not shown: 65527 filtered ports
+PORT      STATE SERVICE       VERSION
+80/tcp    open  http          Microsoft IIS httpd 10.0
+135/tcp   open  msrpc         Microsoft Windows RPC
+445/tcp   open  microsoft-ds  Microsoft Windows Server 2008 R2 - 2012 microsoft-ds
+808/tcp   open  ccproxy-http?
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+22350/tcp open  CodeMeter?
+22352/tcp open  unknown
+49666/tcp open  msrpc         Microsoft Windows RPC
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port22350-TCP:V=7.80%I=7%D=8/29%Time=5F4ABA9D%P=x86_64-pc-linux-gnu%r(H
+SF:TTPOptions,14B,"HTTP/1\.1\x20405\x20Method\x20Not\x20Allowed\r\nConnect
+SF:ion:\x20close\r\nContent-Type:\x20text/html\r\nContent-Length:\x20231\r
+SF:\n\r\n<meta\x20http-equiv=\"Content-Type\"\x20content=\"text/html;\x20c
+SF:harset=utf-8\"\x20/>\n<html><h1>Status\x20405\x20-\x20Method\x20Not\x20
+SF:Allowed</h1><p>This\x20request\x20method\x20is\x20not\x20allowed\x20for
+SF:\x20this\x20resource\.</p><p><small>CodeMeter\x206\.70\x20\(Build3152\)
+SF:</small></p></html>")%r(RTSPRequest,13B,"HTTP/1\.1\x20400\x20Bad\x20Req
+SF:uest\r\nConnection:\x20close\r\nContent-Type:\x20text/html\r\nContent-L
+SF:ength:\x20222\r\n\r\n<meta\x20http-equiv=\"Content-Type\"\x20content=\"
+SF:text/html;\x20charset=utf-8\"\x20/>\n<html><h1>Status\x20400\x20-\x20Ba
+SF:d\x20Request</h1><p>Due\x20to\x20bad\x20syntax,\x20the\x20request\x20ca
+SF:nnot\x20be\x20fulfilled\.</p><p><small>CodeMeter\x206\.70\x20\(Build315
+SF:2\)</small></p></html>")%r(SIPOptions,13B,"HTTP/1\.1\x20400\x20Bad\x20R
+SF:equest\r\nConnection:\x20close\r\nContent-Type:\x20text/html\r\nContent
+SF:-Length:\x20222\r\n\r\n<meta\x20http-equiv=\"Content-Type\"\x20content=
+SF:\"text/html;\x20charset=utf-8\"\x20/>\n<html><h1>Status\x20400\x20-\x20
+SF:Bad\x20Request</h1><p>Due\x20to\x20bad\x20syntax,\x20the\x20request\x20
+SF:cannot\x20be\x20fulfilled\.</p><p><small>CodeMeter\x206\.70\x20\(Build3
+SF:152\)</small></p></html>");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port22352-TCP:V=7.80%I=7%D=8/29%Time=5F4ABA9D%P=x86_64-pc-linux-gnu%r(G
+SF:enericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20
+SF:text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\
+SF:x20Request")%r(GetRequest,357A,"HTTP/1\.0\x20200\x20OK\r\nSet-Cookie:\x
+SF:20CmWebAdminSession=c10b4ec4b19dfd7f;\x20Path=/;\x20HttpOnly;\x20Secure
+SF:\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIGI
+SF:N\r\nX-Xss-Protection:\x201;\x20mode=block\r\nDate:\x20Sat,\x2029\x20Au
+SF:g\x202020\x2020:29:17\x20GMT\r\nContent-Type:\x20text/html;\x20charset=
+SF:utf-8\r\n\r\n\n\t<!DOCTYPE\x20html>\x20\x20\x20\x20\n\n\t<html\x20lang=
+SF:\"en-US\">\n\t\t\n\t\t<head>\n\t\t\t<title\x20title=\"t-dashboard\">Web
+SF:Admin\x20\|\x20Dashboard</title>\n\n\t\t\t\n\t\t\t<meta\x20charset=\"ut
+SF:f-8\"\x20/>\n\t\t\t<meta\x20http-equiv=\"X-UA-Compatible\"\x20content=\
+SF:"IE=edge\"\x20/>\n\t\t\t<meta\x20name=\"WIBU-SYSTEMS\x20HTML\x20Served\
+SF:x20Page\"\x20content=\"Data\"\x20/>\n\t\t\t<link\x20href=\"/images/favi
+SF:con\.ico\"\x20rel=\"shortcut\x20icon\"\x20/>\n\t\t\n\n\t\t\t<link\x20re
+SF:l=\"stylesheet\"\x20href=\"/stylesheets/style\.css\"\x20type=\"text/css
+SF:\"/>\n\t\t\t<link\x20rel=\"stylesheet\"\x20href=\"/fonts/font-awesome/c
+SF:ss/font-awesome\.css\">\n\t\t\t<script\x20type=\"text/javascript\"\x20s
+SF:rc=\"/js/jquery\.js\"></script>\n\t\t\t<script\x20type=\"text/javascrip
+SF:t\"\x20src=\"/js/script\.js\"></script>\n\t\t\t<script\x20type=\"text/j
+SF:a")%r(HTTPOptions,B4F,"HTTP/1\.0\x20404\x20Not\x20Found\r\nSet-Cookie:\
+SF:x20CmWebAdminSession=93530328cbfec464;\x20Path=/;\x20HttpOnly;\x20Secur
+SF:e\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20SAMEORIG
+SF:IN\r\nX-Xss-Protection:\x201;\x20mode=block\r\nDate:\x20Sat,\x2029\x20A
+SF:ug\x202020\x2020:29:17\x20GMT\r\nContent-Type:\x20text/html;\x20charset
+SF:=utf-8\r\n\r\n\n\x20\x20\x20\x20\x20\x20\x20\x20<!DOCTYPE\x20html\x20PU
+SF:BLIC\x20\"-//W3C//DTD\x20XHTML\x201\.0\x20Strict//EN\"\n\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\"http://www\.w3\.org/TR/xhtml1/DTD/xhtml1-strict\.dtd
+SF:\">\n\x20\x20\x20\x20\x20\x20\x20\x20<html\x20xmlns=\"http://www\.w3\.o
+SF:rg/1999/xhtml\">\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<head
+SF:>\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tit
+SF:le\x20title=\"t-error\">WebAdmin\x20\|\x20HTTP\x20ERROR</title>\n\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20http
+SF:-equiv=\"Content-Type\"\x20content=\"text/html;charset=utf-8\"\x20/>\n\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<meta\x2
+SF:0http-equiv=\"X-UA-Compatible\"\x20content=\"IE=edge\">\n\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<link\x20rel=\"styles
+SF:heet\"\x20href=\"/stylesheets/style\.css\"\x20type=\"text/css\"/>\n\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<link\x20re
+SF:l=\"stylesheet\"\x20href=\"/fonts/font-awesome/css/font-awesome\.css\">
+SF:\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<scri
+SF:pt\x20type=\"t");
+MAC Address: 00:13:20:03:3F:B8 (Intel Corporate)
+Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for FT-DIR2.ot-domain.local (172.25.100.110)
+Host is up (0.00024s latency).
+Not shown: 65508 closed ports
+PORT      STATE SERVICE           VERSION
+80/tcp    open  http              Microsoft IIS httpd 10.0
+135/tcp   open  msrpc             Microsoft Windows RPC
+139/tcp   open  netbios-ssn       Microsoft Windows netbios-ssn
+403/tcp   open  tcpwrapped
+445/tcp   open  microsoft-ds      Microsoft Windows Server 2008 R2 - 2012 microsoft-ds
+1332/tcp  open  pcia-rxp-b?
+3060/tcp  open  interserver?
+4241/tcp  open  vrml-multi-use?
+4255/tcp  open  vrml-multi-use?
+5241/tcp  open  unknown
+5985/tcp  open  http              Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+6543/tcp  open  mythtv?
+7153/tcp  open  unknown
+8082/tcp  open  http              MS .NET Remoting httpd (.NET CLR 4.0.30319.42000)
+9111/tcp  open  DragonIDSConsole?
+22350/tcp open  CodeMeter?
+27000/tcp open  flexlm            FlexLM license manager
+47001/tcp open  http              Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+49664/tcp open  msrpc             Microsoft Windows RPC
+49665/tcp open  msrpc             Microsoft Windows RPC
+49666/tcp open  msrpc             Microsoft Windows RPC
+49667/tcp open  msrpc             Microsoft Windows RPC
+49668/tcp open  msrpc             Microsoft Windows RPC
+49669/tcp open  msrpc             Microsoft Windows RPC
+49683/tcp open  msrpc             Microsoft Windows RPC
+49684/tcp open  flexlm            FlexLM license manager
+49724/tcp open  msrpc             Microsoft Windows RPC
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port3060-TCP:V=7.80%I=7%D=8/29%Time=5F4ABAA3%P=x86_64-pc-linux-gnu%r(Ge
+SF:nericLines,4,"\*#\0\0");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port22350-TCP:V=7.80%I=7%D=8/29%Time=5F4ABAA3%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,3940,"HTTP/1\.1\x20200\x20OK\r\nServer:\x20WIBU-SYSTEMS\x20HT
+SF:TP\x20Server\r\nDate:\x2029\x20Aug\x202020\x2020:29:23\x20\+0000\r\nCon
+SF:nection:\x20close\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nX-
+SF:Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r
+SF:\nX-Content-Type-Options:\x20nosniff\r\nAccept-Ranges:\x20bytes\r\nCont
+SF:ent-Length:\x2014370\r\n\r\n\xef\xbb\xbf<!DOCTYPE\x20html>\x20\x20\x20\
+SF:x20\r\n\r\n<html\x20lang=\"en-US\">\r\n\x20\x20\x20\x20<head>\r\n\x20\x
+SF:20\x20\x20\x20\x20\x20\x20<title\x20title=\"t-dashboard\">WebAdmin\x20\
+SF:|\x20Dashboard</title>\r\n\r\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20
+SF:charset=\"utf-8\"\x20/>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20htt
+SF:p-equiv=\"X-UA-Compatible\"\x20content=\"IE=edge\">\r\n\x20\x20\x20\x20
+SF:\x20\x20\x20\x20<meta\x20name=\"WIBU-SYSTEMS\x20HTML\x20Served\x20Page\
+SF:"\x20content=\"Data\"\x20/>\r\n\r\n\x20\x20\x20\x20\x20\x20\x20\x20<lin
+SF:k\x20rel=\"stylesheet\"\x20href=\"/stylesheets/style\.css\"\x20type=\"t
+SF:ext/css\"/>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<link\x20rel=\"styleshee
+SF:t\"\x20href=\"/fonts/font-awesome/css/font-awesome\.css\">\r\n\x20\x20\
+SF:x20\x20\x20\x20\x20\x20<script\x20type=\"text/javascript\"\x20src=\"/js
+SF:/jquery\.js\"></script>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<script\x20t
+SF:ype=\"text/javascript\"\x20src=\"/js/script\.js\"></script>\r\n\x20\x20
+SF:\x20\x20\x20\x20\x20\x20<script\x20ty")%r(HTTPOptions,14C,"HTTP/1\.1\x2
+SF:0405\x20Method\x20Not\x20Allowed\r\nConnection:\x20close\r\nContent-Typ
+SF:e:\x20text/html\r\nContent-Length:\x20232\r\n\r\n<meta\x20http-equiv=\"
+SF:Content-Type\"\x20content=\"text/html;\x20charset=utf-8\"\x20/>\n<html>
+SF:<h1>Status\x20405\x20-\x20Method\x20Not\x20Allowed</h1><p>This\x20reque
+SF:st\x20method\x20is\x20not\x20allowed\x20for\x20this\x20resource\.</p><p
+SF:><small>CodeMeter\x206\.50c\x20\(Build2640\)</small></p></html>")%r(RTS
+SF:PRequest,13C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20clos
+SF:e\r\nContent-Type:\x20text/html\r\nContent-Length:\x20223\r\n\r\n<meta\
+SF:x20http-equiv=\"Content-Type\"\x20content=\"text/html;\x20charset=utf-8
+SF:\"\x20/>\n<html><h1>Status\x20400\x20-\x20Bad\x20Request</h1><p>Due\x20
+SF:to\x20bad\x20syntax,\x20the\x20request\x20cannot\x20be\x20fulfilled\.</
+SF:p><p><small>CodeMeter\x206\.50c\x20\(Build2640\)</small></p></html>");
+MAC Address: 00:16:6F:7E:D4:30 (Intel Corporate)
+Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for Workstation1.ot-domain.local (172.25.100.201)
+Host is up (0.00020s latency).
+Not shown: 65508 closed ports
+PORT      STATE SERVICE           VERSION
+80/tcp    open  http              Microsoft IIS httpd 10.0
+135/tcp   open  msrpc             Microsoft Windows RPC
+139/tcp   open  netbios-ssn       Microsoft Windows netbios-ssn
+403/tcp   open  tcpwrapped
+445/tcp   open  microsoft-ds      Microsoft Windows 7 - 10 microsoft-ds (workgroup: OT-DOMAIN)
+1332/tcp  open  pcia-rxp-b?
+3060/tcp  open  interserver?
+3389/tcp  open  ms-wbt-server     Microsoft Terminal Services
+4241/tcp  open  vrml-multi-use?
+4255/tcp  open  vrml-multi-use?
+5241/tcp  open  unknown
+6543/tcp  open  mythtv?
+7153/tcp  open  unknown
+8082/tcp  open  http              MS .NET Remoting httpd (.NET CLR 4.0.30319.42000)
+9111/tcp  open  DragonIDSConsole?
+22350/tcp open  CodeMeter?
+27000/tcp open  flexlm            FlexLM license manager
+49664/tcp open  msrpc             Microsoft Windows RPC
+49665/tcp open  msrpc             Microsoft Windows RPC
+49666/tcp open  msrpc             Microsoft Windows RPC
+49667/tcp open  msrpc             Microsoft Windows RPC
+49668/tcp open  msrpc             Microsoft Windows RPC
+49669/tcp open  msrpc             Microsoft Windows RPC
+49671/tcp open  msrpc             Microsoft Windows RPC
+49685/tcp open  msrpc             Microsoft Windows RPC
+49690/tcp open  flexlm            FlexLM license manager
+49725/tcp open  msrpc             Microsoft Windows RPC
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port3060-TCP:V=7.80%I=7%D=8/29%Time=5F4ABAAF%P=x86_64-pc-linux-gnu%r(Ge
+SF:nericLines,4,"\*#\0\0");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port22350-TCP:V=7.80%I=7%D=8/29%Time=5F4ABAD3%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,3406,"HTTP/1\.1\x20200\x20OK\r\nServer:\x20WIBU-SYSTEMS\x20HT
+SF:TP\x20Server\r\nDate:\x2029\x20Aug\x202020\x2020:30:10\x20\+0000\r\nCon
+SF:nection:\x20close\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nX-
+SF:Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r
+SF:\nX-Content-Type-Options:\x20nosniff\r\nAccept-Ranges:\x20bytes\r\nCont
+SF:ent-Length:\x2014364\r\n\r\n\xef\xbb\xbf<!DOCTYPE\x20html>\x20\x20\x20\
+SF:x20\r\n\r\n<html\x20lang=\"en-US\">\r\n\x20\x20\x20\x20<head>\r\n\x20\x
+SF:20\x20\x20\x20\x20\x20\x20<title\x20title=\"t-dashboard\">WebAdmin\x20\
+SF:|\x20Dashboard</title>\r\n\r\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20
+SF:charset=\"utf-8\"\x20/>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20htt
+SF:p-equiv=\"X-UA-Compatible\"\x20content=\"IE=edge\">\r\n\x20\x20\x20\x20
+SF:\x20\x20\x20\x20<meta\x20name=\"WIBU-SYSTEMS\x20HTML\x20Served\x20Page\
+SF:"\x20content=\"Data\"\x20/>\r\n\r\n\x20\x20\x20\x20\x20\x20\x20\x20<lin
+SF:k\x20rel=\"stylesheet\"\x20href=\"/stylesheets/style\.css\"\x20type=\"t
+SF:ext/css\"/>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<link\x20rel=\"styleshee
+SF:t\"\x20href=\"/fonts/font-awesome/css/font-awesome\.css\">\r\n\x20\x20\
+SF:x20\x20\x20\x20\x20\x20<script\x20type=\"text/javascript\"\x20src=\"/js
+SF:/jquery\.js\"></script>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<script\x20t
+SF:ype=\"text/javascript\"\x20src=\"/js/script\.js\"></script>\r\n\x20\x20
+SF:\x20\x20\x20\x20\x20\x20<script\x20ty")%r(HTTPOptions,14C,"HTTP/1\.1\x2
+SF:0405\x20Method\x20Not\x20Allowed\r\nConnection:\x20close\r\nContent-Typ
+SF:e:\x20text/html\r\nContent-Length:\x20232\r\n\r\n<meta\x20http-equiv=\"
+SF:Content-Type\"\x20content=\"text/html;\x20charset=utf-8\"\x20/>\n<html>
+SF:<h1>Status\x20405\x20-\x20Method\x20Not\x20Allowed</h1><p>This\x20reque
+SF:st\x20method\x20is\x20not\x20allowed\x20for\x20this\x20resource\.</p><p
+SF:><small>CodeMeter\x206\.50c\x20\(Build2640\)</small></p></html>")%r(RTS
+SF:PRequest,13C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20clos
+SF:e\r\nContent-Type:\x20text/html\r\nContent-Length:\x20223\r\n\r\n<meta\
+SF:x20http-equiv=\"Content-Type\"\x20content=\"text/html;\x20charset=utf-8
+SF:\"\x20/>\n<html><h1>Status\x20400\x20-\x20Bad\x20Request</h1><p>Due\x20
+SF:to\x20bad\x20syntax,\x20the\x20request\x20cannot\x20be\x20fulfilled\.</
+SF:p><p><small>CodeMeter\x206\.50c\x20\(Build2640\)</small></p></html>");
+MAC Address: 08:60:6E:FC:78:0F (Asustek Computer)
+Service Info: Host: WORKSTATION1; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for Workstation2.ot-domain.local (172.25.100.202)
+Host is up (0.00024s latency).
+Not shown: 65508 closed ports
+PORT      STATE SERVICE           VERSION
+80/tcp    open  http              Microsoft IIS httpd 10.0
+135/tcp   open  msrpc             Microsoft Windows RPC
+139/tcp   open  netbios-ssn       Microsoft Windows netbios-ssn
+403/tcp   open  tcpwrapped
+445/tcp   open  microsoft-ds      Microsoft Windows 7 - 10 microsoft-ds (workgroup: OT-DOMAIN)
+1332/tcp  open  pcia-rxp-b?
+3060/tcp  open  interserver?
+3389/tcp  open  ms-wbt-server     Microsoft Terminal Services
+4241/tcp  open  vrml-multi-use?
+4255/tcp  open  vrml-multi-use?
+5241/tcp  open  unknown
+6543/tcp  open  mythtv?
+7153/tcp  open  unknown
+8082/tcp  open  http              MS .NET Remoting httpd (.NET CLR 4.0.30319.42000)
+9111/tcp  open  DragonIDSConsole?
+22350/tcp open  CodeMeter?
+27000/tcp open  flexlm            FlexLM license manager
+49664/tcp open  msrpc             Microsoft Windows RPC
+49665/tcp open  msrpc             Microsoft Windows RPC
+49666/tcp open  msrpc             Microsoft Windows RPC
+49667/tcp open  msrpc             Microsoft Windows RPC
+49668/tcp open  msrpc             Microsoft Windows RPC
+49669/tcp open  msrpc             Microsoft Windows RPC
+49671/tcp open  msrpc             Microsoft Windows RPC
+49687/tcp open  msrpc             Microsoft Windows RPC
+49689/tcp open  flexlm            FlexLM license manager
+49733/tcp open  msrpc             Microsoft Windows RPC
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port3060-TCP:V=7.80%I=7%D=8/29%Time=5F4ABADF%P=x86_64-pc-linux-gnu%r(Ge
+SF:nericLines,4,"\*#\0\0");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port22350-TCP:V=7.80%I=7%D=8/29%Time=5F4ABAEB%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,393A,"HTTP/1\.1\x20200\x20OK\r\nServer:\x20WIBU-SYSTEMS\x20HT
+SF:TP\x20Server\r\nDate:\x2029\x20Aug\x202020\x2020:30:34\x20\+0000\r\nCon
+SF:nection:\x20close\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nX-
+SF:Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r
+SF:\nX-Content-Type-Options:\x20nosniff\r\nAccept-Ranges:\x20bytes\r\nCont
+SF:ent-Length:\x2014364\r\n\r\n\xef\xbb\xbf<!DOCTYPE\x20html>\x20\x20\x20\
+SF:x20\r\n\r\n<html\x20lang=\"en-US\">\r\n\x20\x20\x20\x20<head>\r\n\x20\x
+SF:20\x20\x20\x20\x20\x20\x20<title\x20title=\"t-dashboard\">WebAdmin\x20\
+SF:|\x20Dashboard</title>\r\n\r\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20
+SF:charset=\"utf-8\"\x20/>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20htt
+SF:p-equiv=\"X-UA-Compatible\"\x20content=\"IE=edge\">\r\n\x20\x20\x20\x20
+SF:\x20\x20\x20\x20<meta\x20name=\"WIBU-SYSTEMS\x20HTML\x20Served\x20Page\
+SF:"\x20content=\"Data\"\x20/>\r\n\r\n\x20\x20\x20\x20\x20\x20\x20\x20<lin
+SF:k\x20rel=\"stylesheet\"\x20href=\"/stylesheets/style\.css\"\x20type=\"t
+SF:ext/css\"/>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<link\x20rel=\"styleshee
+SF:t\"\x20href=\"/fonts/font-awesome/css/font-awesome\.css\">\r\n\x20\x20\
+SF:x20\x20\x20\x20\x20\x20<script\x20type=\"text/javascript\"\x20src=\"/js
+SF:/jquery\.js\"></script>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<script\x20t
+SF:ype=\"text/javascript\"\x20src=\"/js/script\.js\"></script>\r\n\x20\x20
+SF:\x20\x20\x20\x20\x20\x20<script\x20ty")%r(HTTPOptions,14C,"HTTP/1\.1\x2
+SF:0405\x20Method\x20Not\x20Allowed\r\nConnection:\x20close\r\nContent-Typ
+SF:e:\x20text/html\r\nContent-Length:\x20232\r\n\r\n<meta\x20http-equiv=\"
+SF:Content-Type\"\x20content=\"text/html;\x20charset=utf-8\"\x20/>\n<html>
+SF:<h1>Status\x20405\x20-\x20Method\x20Not\x20Allowed</h1><p>This\x20reque
+SF:st\x20method\x20is\x20not\x20allowed\x20for\x20this\x20resource\.</p><p
+SF:><small>CodeMeter\x206\.50c\x20\(Build2640\)</small></p></html>")%r(RTS
+SF:PRequest,13C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20clos
+SF:e\r\nContent-Type:\x20text/html\r\nContent-Length:\x20223\r\n\r\n<meta\
+SF:x20http-equiv=\"Content-Type\"\x20content=\"text/html;\x20charset=utf-8
+SF:\"\x20/>\n<html><h1>Status\x20400\x20-\x20Bad\x20Request</h1><p>Due\x20
+SF:to\x20bad\x20syntax,\x20the\x20request\x20cannot\x20be\x20fulfilled\.</
+SF:p><p><small>CodeMeter\x206\.50c\x20\(Build2640\)</small></p></html>");
+MAC Address: 00:50:56:32:BD:58 (VMware)
+Service Info: Host: WORKSTATION2; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for Workstation3.ot-domain.local (172.25.100.203)
+Host is up (0.00036s latency).
+Not shown: 65532 closed ports
+PORT    STATE SERVICE      VERSION
+135/tcp open  msrpc        Microsoft Windows RPC
+139/tcp open  netbios-ssn  Microsoft Windows netbios-ssn
+445/tcp open  microsoft-ds Microsoft Windows XP microsoft-ds
+MAC Address: 40:83:DE:B2:10:48 (Zebra Technologies)
+Service Info: OSs: Windows, Windows XP; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_xp
+
+Nmap scan report for Workstation10.ot-domain.local (172.25.100.210)
+Host is up (0.00071s latency).
+Not shown: 65521 filtered ports
+PORT      STATE SERVICE           VERSION
+80/tcp    open  http              Microsoft IIS httpd 7.5
+135/tcp   open  msrpc             Microsoft Windows RPC
+1332/tcp  open  pcia-rxp-b?
+3060/tcp  open  interserver?
+4241/tcp  open  vrml-multi-use?
+4255/tcp  open  vrml-multi-use?
+5241/tcp  open  unknown
+6543/tcp  open  mythtv?
+7153/tcp  open  unknown
+8082/tcp  open  http              MS .NET Remoting httpd (.NET CLR 4.0.30319.42000)
+9111/tcp  open  DragonIDSConsole?
+22350/tcp open  CodeMeter?
+27000/tcp open  flexlm            FlexLM license manager
+49171/tcp open  flexlm            FlexLM license manager
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port3060-TCP:V=7.80%I=7%D=8/29%Time=5F4ABB1E%P=x86_64-pc-linux-gnu%r(Ge
+SF:nericLines,4,"\*#\0\0");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port22350-TCP:V=7.80%I=7%D=8/29%Time=5F4ABB2A%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,394E,"HTTP/1\.1\x20200\x20OK\r\nServer:\x20WIBU-SYSTEMS\x20HT
+SF:TP\x20Server\r\nDate:\x2029\x20Aug\x202020\x2020:31:38\x20\+0000\r\nCon
+SF:nection:\x20close\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nX-
+SF:Frame-Options:\x20SAMEORIGIN\r\nX-XSS-Protection:\x201;\x20mode=block\r
+SF:\nX-Content-Type-Options:\x20nosniff\r\nAccept-Ranges:\x20bytes\r\nCont
+SF:ent-Length:\x2014384\r\n\r\n\xef\xbb\xbf<!DOCTYPE\x20html>\x20\x20\x20\
+SF:x20\r\n\r\n<html\x20lang=\"en-US\">\r\n\x20\x20\x20\x20<head>\r\n\x20\x
+SF:20\x20\x20\x20\x20\x20\x20<title\x20title=\"t-dashboard\">WebAdmin\x20\
+SF:|\x20Dashboard</title>\r\n\r\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20
+SF:charset=\"utf-8\"\x20/>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20htt
+SF:p-equiv=\"X-UA-Compatible\"\x20content=\"IE=edge\">\r\n\x20\x20\x20\x20
+SF:\x20\x20\x20\x20<meta\x20name=\"WIBU-SYSTEMS\x20HTML\x20Served\x20Page\
+SF:"\x20content=\"Data\"\x20/>\r\n\r\n\x20\x20\x20\x20\x20\x20\x20\x20<lin
+SF:k\x20rel=\"stylesheet\"\x20href=\"/stylesheets/style\.css\"\x20type=\"t
+SF:ext/css\"/>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<link\x20rel=\"styleshee
+SF:t\"\x20href=\"/fonts/font-awesome/css/font-awesome\.css\">\r\n\x20\x20\
+SF:x20\x20\x20\x20\x20\x20<script\x20type=\"text/javascript\"\x20src=\"/js
+SF:/jquery\.js\"></script>\r\n\x20\x20\x20\x20\x20\x20\x20\x20<script\x20t
+SF:ype=\"text/javascript\"\x20src=\"/js/script\.js\"></script>\r\n\x20\x20
+SF:\x20\x20\x20\x20\x20\x20<script\x20ty")%r(HTTPOptions,14C,"HTTP/1\.1\x2
+SF:0405\x20Method\x20Not\x20Allowed\r\nConnection:\x20close\r\nContent-Typ
+SF:e:\x20text/html\r\nContent-Length:\x20232\r\n\r\n<meta\x20http-equiv=\"
+SF:Content-Type\"\x20content=\"text/html;\x20charset=utf-8\"\x20/>\n<html>
+SF:<h1>Status\x20405\x20-\x20Method\x20Not\x20Allowed</h1><p>This\x20reque
+SF:st\x20method\x20is\x20not\x20allowed\x20for\x20this\x20resource\.</p><p
+SF:><small>CodeMeter\x206\.50c\x20\(Build2640\)</small></p></html>")%r(RTS
+SF:PRequest,13C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20clos
+SF:e\r\nContent-Type:\x20text/html\r\nContent-Length:\x20223\r\n\r\n<meta\
+SF:x20http-equiv=\"Content-Type\"\x20content=\"text/html;\x20charset=utf-8
+SF:\"\x20/>\n<html><h1>Status\x20400\x20-\x20Bad\x20Request</h1><p>Due\x20
+SF:to\x20bad\x20syntax,\x20the\x20request\x20cannot\x20be\x20fulfilled\.</
+SF:p><p><small>CodeMeter\x206\.50c\x20\(Build2640\)</small></p></html>");
+MAC Address: 00:0C:29:40:E7:A0 (VMware)
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Nmap scan report for Workstation12.OT-Domain.local (172.25.100.212)
+Host is up (0.00071s latency).
+All 65535 scanned ports on Workstation12.OT-Domain.local (172.25.100.212) are filtered
+MAC Address: 00:0C:29:EE:32:E1 (VMware)
+
+Nmap scan report for 172.25.100.220
+Host is up (0.00060s latency).
+Not shown: 65532 closed ports
+PORT    STATE SERVICE      VERSION
+135/tcp open  msrpc        Microsoft Windows RPC
+139/tcp open  netbios-ssn  Microsoft Windows netbios-ssn
+445/tcp open  microsoft-ds Microsoft Windows XP microsoft-ds
+MAC Address: 00:0C:29:FA:9D:2F (VMware)
+Service Info: OSs: Windows, Windows XP; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_xp
+
+Nmap scan report for 172.25.100.222
+Host is up (0.0000030s latency).
+All 65535 scanned ports on 172.25.100.222 are closed
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Aug 29 14:34:21 2020 -- 16 IP addresses (16 hosts up) scanned in 429.65 seconds

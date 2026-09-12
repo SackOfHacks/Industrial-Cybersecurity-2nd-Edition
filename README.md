@@ -56,7 +56,7 @@ environment, then the second to learn how to *watch, test, and defend* it.
 | Directory | Contents |
 |---|---|
 | `lab-setup/modbus-server/` | A [pymodbus](https://github.com/pymodbus-dev/pymodbus)-based Modbus TCP server that simulates an industrial device on the lab network. |
-| `lab-setup/malware/` | Placeholder for the malware sample used by the detection and incident-response exercises — see [Malware sample](#malware-sample) below. |
+| `lab-setup/malware/` | ☣️ **Live malware sample** used by the detection and incident-response exercises, in an encrypted archive — read [Malware sample](#malware-sample) before touching it. |
 | `security-onion-logstash/` | Elasticsearch ingest pipelines for [Security Onion](https://securityonion.net/): a `syslog` router and a `silentdefense` pipeline that parses CEF alerts from the SilentDefense OT IDS. |
 | `elasticsearch-tweaks/` | Index template for the `so-syslog-*` indices. |
 | `wazuh-config/` | The [Wazuh](https://wazuh.com/) Windows agent `ossec.conf` deployed to the lab endpoints — Sysmon, PowerShell and Security eventchannel collection, FIM, and registry monitoring. |
@@ -158,23 +158,33 @@ authoritative view of the lab's host inventory.
 
 ### Malware sample
 
-The detection and incident-response exercises use a malicious service DLL, `IPRIPa.dll`, referenced
-in the book as `lab-setup/malware/IPRIPa.zip`. **The archive in this repository is an empty
-placeholder and does not contain the sample.**
-
-The sample is not redistributed here in unprotected form: a bare, unencrypted PE in a public
-repository is liable to be quarantined by endpoint protection on clone and flagged by code-hosting
-platforms. If you are working through those exercises, source an equivalent sample from a malware
-repository such as [MalwareBazaar](https://bazaar.abuse.ch/) or
-[VirusShare](https://virusshare.com/), and handle it only inside the isolated lab.
-
-For reference, the sample used when the book was written was:
+> ### ☣️ This is live malware
+>
+> `lab-setup/malware/IPRIPa.zip` contains a **real, working malicious DLL**, used by the detection
+> and incident-response exercises. It is not defanged or simulated.
+>
+> The archive is **AES-256 encrypted with the password `infected`** — the usual convention for
+> distributing samples — so that it is not extracted by accident and is not quarantined by endpoint
+> protection the moment you clone. Do not unpack it outside an isolated, disposable lab VM with no
+> route to a network you care about.
 
 | | |
 |---|---|
+| **Archive** | `lab-setup/malware/IPRIPa.zip` (AES-256, password `infected`) |
 | **Filename** | `IPRIPa.dll` |
 | **Size** | 24,065 bytes |
 | **SHA-256** | `424594b8ed754abc2af22115c87e007bd0385ac3461741e4ed6e0b3947f48f86` |
+
+Verify the sample before you use it:
+
+```bash
+7z x -p'infected' IPRIPa.zip          # or: unzip -P infected IPRIPa.zip
+sha256sum IPRIPa.dll                  # must match the hash above
+```
+
+An earlier revision of this repository briefly carried this archive empty, and before that carried
+the DLL unencrypted. If you need to compare against a fresh copy, equivalent samples are available
+from [MalwareBazaar](https://bazaar.abuse.ch/) and [VirusShare](https://virusshare.com/).
 
 ---
 

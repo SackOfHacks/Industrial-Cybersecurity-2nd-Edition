@@ -1,0 +1,4 @@
+# modbus-server.py targets the pymodbus 2.x API (pymodbus.server.sync).
+# That module was removed in pymodbus 3.0, so the latest release will NOT work.
+# 2.5.3 is the final 2.x release and is the version to install.
+pymodbus==2.5.3

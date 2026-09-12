@@ -7,17 +7,3 @@ PUT _template/so-syslog
     "dynamic" : "true"
   }
 }
-
-
-
-
-
-PUT _template/so-syslog
-{
-  "index_patterns" : [
-      "so-syslog-*"
-    ],
-  "mappings" : {
-    "dynamic" : "true"
-  }
-}

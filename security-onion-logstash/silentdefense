@@ -3,7 +3,7 @@
   "processors" : [
       {
         "dissect": {
-                "if": "ctx.sd.logname == 'NetworkLogs'",
+                "if": "ctx.sd?.logname == 'NetworkLogs'",
                 "field": "real_message",
                 "pattern" : "rt=%{sd.aler_rt} msg=%{sd.alert_message} cat=%{sd.alert_category} deviceExternalId=%{sd.device_extId} smac=%{source.mac} dmac=%{destination.mac} src=%{source.ip} dst=%{destination.ip} dpt=%{destination.port} %{source.hostname} %{destination.hostname} %{sd.filePath} %{sd.fileType} %{sd.fsize} %{sd.user_message}",
                 "on_failure" : [ {"set" : {"field" : "error.message","value" : "{{ _ingest.on_failure_message }}"}}]
@@ -11,9 +11,9 @@
      },
      {
         "dissect": {
-                "if": "ctx.sd.logname == 'AlertLogs'",
+                "if": "ctx.sd?.logname == 'AlertLogs'",
                 "field": "real_message",
-                "pattern" : "cat=%{sd.alert_category} externalId=%{sd.externalID %{sd.caseId} %{caseName} rt=%{sd.aler_rt} smac=%{source.mac} dmac=%{destination.mac} src=%{source.ip} dst=%{destination.ip} spt=%{source.port} dpt=%{destination.port} %{source.hostname} %{destination.hostname} %{sd.user_message}",
+                "pattern" : "cat=%{sd.alert_category} externalId=%{sd.externalID} %{sd.caseId} %{caseName} rt=%{sd.aler_rt} smac=%{source.mac} dmac=%{destination.mac} src=%{source.ip} dst=%{destination.ip} spt=%{source.port} dpt=%{destination.port} %{source.hostname} %{destination.hostname} %{sd.user_message}",
                 "on_failure" : [ {"set" : {"field" : "error.message","value" : "{{ _ingest.on_failure_message }}"}}]
         }
      },

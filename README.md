@@ -56,11 +56,11 @@ environment, then the second to learn how to *watch, test, and defend* it.
 | Directory | Contents |
 |---|---|
 | `lab-setup/modbus-server/` | A [pymodbus](https://github.com/pymodbus-dev/pymodbus)-based Modbus TCP server that simulates an industrial device on the lab network. |
-| `lab-setup/malware/` | Malware sample used by the detection and incident-response exercises. |
+| `lab-setup/malware/` | Placeholder for the malware sample used by the detection and incident-response exercises — see [Malware sample](#malware-sample) below. |
 | `security-onion-logstash/` | Elasticsearch ingest pipelines for [Security Onion](https://securityonion.net/): a `syslog` router and a `silentdefense` pipeline that parses CEF alerts from the SilentDefense OT IDS. |
 | `elasticsearch-tweaks/` | Index template for the `so-syslog-*` indices. |
 | `wazuh-config/` | The [Wazuh](https://wazuh.com/) Windows agent `ossec.conf` deployed to the lab endpoints — Sysmon, PowerShell and Security eventchannel collection, FIM, and registry monitoring. |
-| `lab-artifacts/` | Data collected *from* the lab: `msinfo32` system reports per host, and Nmap host-discovery and service-detection scans of the ICS subnet. |
+| `lab-artifacts/` | Data collected *from* the lab: `msinfo32` system reports, and Nmap host-discovery and service-detection scans of the ICS subnet. |
 
 ---
 
@@ -124,11 +124,57 @@ originating vendor and product, and routes events on to the matching downstream 
 `silentdefense` pipeline dissects SilentDefense CEF alert and network logs into ECS-style fields
 (`source.ip`, `destination.ip`, `network.community_id`, and so on).
 
+> **Naming.** Despite the directory name, these are Elasticsearch **ingest pipelines**, not Logstash
+> configurations. On a Security Onion manager they belong under
+> `/opt/so/saltstack/local/salt/elasticsearch/files/ingest/`. The directory name is kept as-is so the
+> paths continue to match the book text.
+
 ### Wazuh agent
 
 Deploy `wazuh-config/ossec.conf` to `C:\Program Files (x86)\ossec-agent\ossec.conf` on the Windows
 lab endpoints and restart the agent. Update the `<address>` element to point at your own Wazuh
 manager.
+
+---
+
+---
+
+## 📌 Notes on the artifacts
+
+### System inventory reports
+
+`lab-artifacts/` contains three `msinfo32` reports: `HMI-1`, `HMI-2` (both Windows XP HMIs) and
+`Workstation-11` (Windows 10 Pro).
+
+Earlier revisions of this repository also carried reports named `Ind-DC-1`, `Ind-DC-2`,
+`Workstation-1`, `-3`, `-7`, `-8` and `-10`. Those seven files were byte-for-byte copies of the
+`Workstation-11` report — each one recorded `System Name: WORKSTATION11` internally — so they
+described a single host under eight different names rather than eight distinct machines. They have
+been removed to avoid misrepresenting the lab inventory; the earlier revisions remain in the Git
+history if you need them.
+
+The Nmap output in `ics-scan_2020.txt` and `ics-services.txt` is unaffected and remains the
+authoritative view of the lab's host inventory.
+
+### Malware sample
+
+The detection and incident-response exercises use a malicious service DLL, `IPRIPa.dll`, referenced
+in the book as `lab-setup/malware/IPRIPa.zip`. **The archive in this repository is an empty
+placeholder and does not contain the sample.**
+
+The sample is not redistributed here in unprotected form: a bare, unencrypted PE in a public
+repository is liable to be quarantined by endpoint protection on clone and flagged by code-hosting
+platforms. If you are working through those exercises, source an equivalent sample from a malware
+repository such as [MalwareBazaar](https://bazaar.abuse.ch/) or
+[VirusShare](https://virusshare.com/), and handle it only inside the isolated lab.
+
+For reference, the sample used when the book was written was:
+
+| | |
+|---|---|
+| **Filename** | `IPRIPa.dll` |
+| **Size** | 24,065 bytes |
+| **SHA-256** | `424594b8ed754abc2af22115c87e007bd0385ac3461741e4ed6e0b3947f48f86` |
 
 ---
 
